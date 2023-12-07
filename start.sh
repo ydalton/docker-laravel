@@ -5,6 +5,13 @@ if [ -z "$PHP_PROJECT" ]; then
 	exit 1
 fi
 
+# Check if project folder even exists
+if [ ! -d "$PHP_PROJECT" ]; then
+	echo "$PHP_PROJECT: no such folder exists. Did you specify the" \
+	     "right project folder?"
+	exit 1
+fi
+
 cp -f ./.htaccess $PHP_PROJECT/
 docker compose up -d
 
