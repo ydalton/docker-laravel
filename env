@@ -1,0 +1,3 @@
+#!/bin/sh
+# Here you set the name your project
+export PHP_PROJECT=vinyl_shop

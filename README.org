@@ -1,10 +1,9 @@
 #+title: Homestead replacement
-
 This is a Compose file that runs a set of containers to act as a Docker based
 replacement to the Laravel/Homestead image.
 
 * How to use
-In ~start.sh~, change the ~PHP_PROJECT~ environment variable to the path to your
+In ~env~, change the ~PHP_PROJECT~ environment variable to the path to your
 project. For example:
 #+begin_example
 PHP_PROJECT=student_administration
@@ -15,3 +14,10 @@ command:
 #+begin_src
 ./bin/php artisan migrate:fresh
 #+end_src
+* Project configuration
+You will need to modify the .env file in the root of the project in order for
+it to work. The required changes are:
+- ~DB_USERNAME~ should be "root"
+- ~DB_PASSWORD~ should be "secret"
+- ~DB_HOST~ should be "mysql"
+Do NOT change anything in ~docker-compose.yml~, you might break something!
