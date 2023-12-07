@@ -1,3 +1,6 @@
 #!/bin/sh
+
+# So you can call "php artisan" wherever
+export PATH="$(pwd)/bin:$PATH"
 # Here you set the name your project
 export PHP_PROJECT=vinyl_shop

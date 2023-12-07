@@ -3,17 +3,20 @@ This is a Compose file that runs a set of containers to act as a Docker based
 replacement to the Laravel/Homestead image.
 
 * How to use
-In ~env~, change the ~PHP_PROJECT~ environment variable to the path to your
-project. For example:
+In the ~env~ file, change the ~PHP_PROJECT~ environment variable to the path to
+your project. For example:
 #+begin_example
 PHP_PROJECT=student_administration
 #+end_example
-When you want to start the containers, run the ~start.sh~ script. In the
-beginning, it will error with "connection refused". To fix this, run this
-command:
-#+begin_src
-./bin/php artisan migrate:fresh
-#+end_src
+When you want to start the containers, first run ~source ./env~, and then run
+the ~start.sh~ script. This will launch the containers with Compose.
+
+To view the Laravel project in the browser, visit [[http://localhost:8080]]. If all
+goes well, you should your masterpiece!
+* Note
+If you start with a fresh project, upon viewing your project in the browser, you
+might encounter this error with "connection refused". To fix this, run this
+~php artisan migrate:fresh~.
 * Project configuration
 You will need to modify the .env file in the root of the project in order for
 it to work. The required changes are:
