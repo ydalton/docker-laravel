@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  webserver:
+    container_name: apache
+    build:
+      context: .
+    ports:
+      - "8080:80"
+    volumes:
+      - "${PWD}/${PHP_PROJECT}:/var/www/html"
+  db:
+    container_name: mysql
+    image: mysql:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=laravel
+
+volumes:
+  db_data:
