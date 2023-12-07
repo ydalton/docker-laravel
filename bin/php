@@ -1,3 +1,8 @@
 #!/bin/sh
 
+if [ -z $1 ]; then
+	echo "Did you forget \"artisan\"?"
+	exit 1
+fi
+
 docker exec apache php "/var/www/html/$@"
