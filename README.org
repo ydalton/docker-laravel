@@ -3,6 +3,7 @@ This is a Compose file that runs a set of containers to act as a Docker based
 replacement to the Laravel/Homestead image.
 
 * How to use
+** Setup
 In the ~env~ file, change the ~PHP_PROJECT~ environment variable to the path to
 your project. For example:
 #+begin_example
@@ -13,6 +14,10 @@ the ~start.sh~ script. This will launch the containers with Compose.
 
 To view the Laravel project in the browser, visit [[http://localhost:8080]]. If all
 goes well, you should your masterpiece!
+** PHPMyAdmin
+This container set also comes with PHPMyAdmin, to allow you to view your
+database in the browser. To access, visit [[http://localhost:8081]]. If it prompts
+you for a username and password, those are "root" and "secret" respectively.
 * Note
 If you start with a fresh project, upon viewing your project in the browser, you
 might encounter this error with "connection refused". To fix this, run this
