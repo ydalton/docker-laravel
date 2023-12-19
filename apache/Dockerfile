@@ -1,7 +1,7 @@
 FROM debian:latest
 
 RUN apt update
-RUN apt install -y apache2 tzdata php php-mysql php-dom
+RUN apt install -y apache2 tzdata php php-mysql php-dom php-curl composer
 
 RUN usermod -u 1000 www-data
 RUN groupmod -g 1000 www-data

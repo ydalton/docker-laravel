@@ -12,16 +12,22 @@ if [ -z $1 ]; then
 	usage
 fi
 
+
 case $1 in
 	"start")
-		docker compose --env-file ./env up -d
+		EXEC="up -d"
+		;;
+	"build")
+		EXEC=build
 		;;
 	"stop")
-		docker compose --env-file ./env down
+		EXEC=down
 		;;
 	*)
 		usage
 		;;
 esac
+
+docker compose --env-file ./env $EXEC
 
 echo $PHP_PROJECT/ > ./.gitignore
