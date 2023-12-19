@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source $PWD/env
+
 usage() {
 	echo "usage: laravel.sh [start|stop]"
 	exit 1
@@ -22,4 +24,4 @@ case $1 in
 		;;
 esac
 
-#echo $PHP_PROJECT/ > ./.gitignore
+echo $PHP_PROJECT/ > ./.gitignore
