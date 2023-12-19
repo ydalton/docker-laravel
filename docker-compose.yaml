@@ -8,7 +8,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - "${PWD}/${PHP_PROJECT}:/var/www/html"
+      - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
+      - "${PWD}/${PHP_PROJECT:?}/.htaccess:/var/www/html/.htaccess"
   db:
     container_name: mysql
     image: mysql:latest
