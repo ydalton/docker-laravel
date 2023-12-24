@@ -3,7 +3,7 @@
 source $PWD/env
 
 usage() {
-	echo "usage: laravel.sh [start|stop]"
+	echo "usage: laravel.sh [start|stop|build]"
 	exit 1
 }
 
