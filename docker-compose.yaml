@@ -5,11 +5,14 @@ services:
     container_name: apache
     build:
       context: apache/
+      dockerfile: Dockerfile.alpine
     ports:
       - "8080:80"
     volumes:
-      - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
-      - "${PWD}/.htaccess:/var/www/html/.htaccess"
+      - "${PWD}/${PHP_PROJECT:?}:/var/www/localhost/htdocs"
+      - "${PWD}/.htaccess:/var/www/localhost/htdocs/.htaccess"
+        #- "${PWD}/${PHP_PROJECT:?}:/var/www/html"
+        #- "${PWD}/.htaccess:/var/www/html/.htaccess"
   db:
     container_name: mysql
     image: mysql:latest
