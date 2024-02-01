@@ -9,8 +9,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - "${PWD}/${PHP_PROJECT:?}:/var/www/localhost/htdocs"
-      - "${PWD}/.htaccess:/var/www/localhost/htdocs/.htaccess"
+      - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
+      - "${PWD}/.htaccess:/var/www/html/.htaccess"
         #- "${PWD}/${PHP_PROJECT:?}:/var/www/html"
         #- "${PWD}/.htaccess:/var/www/html/.htaccess"
   db:

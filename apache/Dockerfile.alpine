@@ -5,6 +5,7 @@ RUN adduser -Du 1000 apache
 RUN apk add apache2 php-apache2
 
 RUN apk add \
+	php \
 	php-pdo \
 	php-mbstring \
 	php-pdo_mysql \
