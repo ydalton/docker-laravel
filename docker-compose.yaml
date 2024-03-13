@@ -21,6 +21,11 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=laravel
+  admin:
+    container_name: phpmyadmin
+    image: phpmyadmin:latest
+    ports:
+      - "8081:80"
 
 volumes:
   db_data:
