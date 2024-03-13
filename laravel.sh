@@ -13,7 +13,7 @@ if [ -z $1 ]; then
 fi
 
 if [ ! -d $PHP_PROJECT ]; then
-	echo "Specified project folder in \"env\" file does not exist." \
+	echo "Project folder \"$PHP_PROJECT\" in \"env\" file does not exist." \
 	     "Is it set correctly?"
 	exit 1
 fi
