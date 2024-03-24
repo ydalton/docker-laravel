@@ -5,8 +5,10 @@ services:
       context: nginx/
     ports:
       - "8080:80"
+      - "8081:8081"
     volumes:
-      - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
+      - "${PWD}/${PHP_PROJECT:?}:/var/www/html:ro"
+      - phpmyadmin:/var/www/phpmyadmin:ro
   php:
     container_name: php
     build:
@@ -23,9 +25,10 @@ services:
       - MYSQL_DATABASE=laravel
   admin:
     container_name: phpmyadmin
-    image: phpmyadmin:latest
-    ports:
-      - "8081:80"
+    image: phpmyadmin:fpm-alpine
+    volumes:
+      - phpmyadmin:/var/www/html
 
 volumes:
   db_data:
+  phpmyadmin:
