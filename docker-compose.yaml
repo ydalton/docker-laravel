@@ -7,14 +7,12 @@ services:
       - "8080:80"
     volumes:
       - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
-      - "${PWD}/.htaccess:/var/www/html/.htaccess"
   php:
     container_name: php
     build:
       context: php/
     volumes:
       - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
-      - "${PWD}/.htaccess:/var/www/html/.htaccess"
   db:
     container_name: mysql
     image: mysql:latest
