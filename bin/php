@@ -5,4 +5,4 @@ if [ -z $1 ]; then
 	exit 1
 fi
 
-docker exec -u apache -t apache  php "/var/www/html/$@"
+docker exec -u nginx -t php php "/var/www/html/$@"

@@ -1,18 +1,20 @@
-version: '3.9'
-
 services:
   webserver:
-    container_name: apache
+    container_name: nginx
     build:
-      context: apache/
-      dockerfile: Dockerfile.alpine
+      context: nginx/
     ports:
       - "8080:80"
     volumes:
       - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
       - "${PWD}/.htaccess:/var/www/html/.htaccess"
-        #- "${PWD}/${PHP_PROJECT:?}:/var/www/html"
-        #- "${PWD}/.htaccess:/var/www/html/.htaccess"
+  php:
+    container_name: php
+    build:
+      context: php/
+    volumes:
+      - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
+      - "${PWD}/.htaccess:/var/www/html/.htaccess"
   db:
     container_name: mysql
     image: mysql:latest
