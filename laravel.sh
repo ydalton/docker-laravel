@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source $PWD/env
+. $PWD/env
 
 usage() {
 	echo "usage: laravel.sh [start|stop|build]"
