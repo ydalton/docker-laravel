@@ -13,6 +13,7 @@ RUN apk add \
 	php-session \
 	php-tokenizer \
 	php-xml \
+	php-gd \
 	php-fileinfo
 
 COPY www.conf /etc/php82/php-fpm.d/
