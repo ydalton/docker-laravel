@@ -33,6 +33,9 @@ case $1 in
 	"stop")
 		EXEC=down
 		;;
+	"shell")
+		exec docker exec -u nginx -w /var/www/html -it php sh
+		;;
 	*)
 		usage
 		;;
