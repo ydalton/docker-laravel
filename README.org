@@ -30,6 +30,13 @@ or:
 PHP_PROJECT=~/foo/bar/laravel-project
 #+end_example
 Relative paths MUST begin with ~./~ or ~../~, or there will be an error.
+*** Project configuration
+You will need to modify the .env file in the root of the Laravel project
+in order for it to work. The required changes are:
+- ~DB_CONNECTION~ should be "mysql"
+- ~DB_USERNAME~ should be "root"
+- ~DB_PASSWORD~ should be "secret"
+- ~DB_HOST~ should be "mysql"
 *** Starting and using the containers
 Before we can start the containers, we must first build the Docker
 containers in this repo. To do so, run ~./laravel.sh build~. When that
@@ -63,11 +70,3 @@ fix this, run this:
 Move your project from your local drive to WSL's Linux filesystem!
 Otherwise, you /will/ incur a severe performance penalty! Pages will go
 from loading instantly to taking more than 5 seconds to load!
-* Project configuration
-You will need to modify the .env file in the root of the project in
-order for it to work. The required changes are:
-- ~DB_USERNAME~ should be "root"
-- ~DB_PASSWORD~ should be "secret"
-- ~DB_HOST~ should be "mysql"
-*Do NOT change anything in* ~docker-compose.yml~*, you might break*
-*something!*
