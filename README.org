@@ -13,7 +13,7 @@ First, clone this repo and enter the cloned repo:
 git clone https://github.com/ydalton/docker-laravel.git
 cd docker-laravel
 #+end_example
-*** .env file
+*** Environment file
 Secondly, you will need to use a ~.env~ file. Copy the ~.env.example~
 as a ~.env~ as follows:
 #+begin_example
@@ -25,14 +25,24 @@ are supported. For example:
 #+begin_example
 PHP_PROJECT=./student_administration
 #+end_example
-The available commands are:
-- ~./laravel.sh start~: start the Laravel containers.
-- ~./laravel.sh build~: build the Laravel containers.
-- ~./laravel.sh stop~: stop the Laravel containers.
+or:
+#+begin_example
+PHP_PROJECT=~/foo/bar/laravel-project
+#+end_example
+Relative paths MUST begin with ~./~ or ~../~, or there will be an error.
+*** Starting and using the containers
+Before we can start the containers, we must first build the Docker
+containers in this repo. To do so, run ~./laravel.sh build~. When that
+is completed, run ~./laravel.sh start~ to start the containers.
 
 To view the Laravel project in the browser, visit
 [[http://localhost:8080]]. If all goes well, you should your
 masterpiece!
+** Commands
+The available commands are:
+- ~./laravel.sh start~: start the Docker containers.
+- ~./laravel.sh build~: build the Docker containers.
+- ~./laravel.sh stop~: stop the Docker containers.
 ** PHPMyAdmin
 This container set also comes with PHPMyAdmin, to allow you to view your
 database in the browser. To access, visit [[http://localhost:8081]]. If
