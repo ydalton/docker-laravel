@@ -40,7 +40,6 @@ esac
 
 docker compose --env-file ./.env $EXEC
 
-# empty the gitignore
-echo -n > ./.gitignore
-echo "/$(basename $PHP_PROJECT)" >> ./.gitignore
-echo "/.env" >> ./.gitignore
+EXCLUDE_FILE=./.git/info/exclude
+echo -n > $EXCLUDE_FILE
+echo "/$(basename $PHP_PROJECT)" >> $EXCLUDE_FILE
