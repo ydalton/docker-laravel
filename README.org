@@ -43,6 +43,8 @@ The available commands are:
 - ~./laravel.sh start~: start the Docker containers.
 - ~./laravel.sh build~: build the Docker containers.
 - ~./laravel.sh stop~: stop the Docker containers.
+- ~./laravel.sh shell~: launch a shell in the PHP container, this is to
+  be able to run ~php artisan~ commands.
 ** PHPMyAdmin
 This container set also comes with PHPMyAdmin, to allow you to view your
 database in the browser. To access, visit [[http://localhost:8081]]. If
@@ -56,7 +58,7 @@ containers with ~docker compose down~.
 If you start with a fresh project, upon viewing your project in the
 browser, you might encounter this error with "connection refused". To
 fix this, run this:
-~../bin/php artisan migrate:fresh~.
+~php artisan migrate:fresh~.
 ** A note for WSL users
 Move your project from your local drive to WSL's Linux filesystem!
 Otherwise, you /will/ incur a severe performance penalty! Pages will go
