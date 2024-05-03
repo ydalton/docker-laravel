@@ -1,8 +1,9 @@
 #+title: Homestead replacement
 This is a Docker Compose stack that runs a set of containers to act as
-a Docker based alternative to the Laravel/Homestead image, primarily
-for Mac/Linux users on Apple Silicon Macs who do not have access to
-VirtualBox or Parallels.
+a Docker based alternative to the Laravel/Homestead image, and also a
+lightweight alternative to Laravel Sail. This is primarily for Mac/Linux
+users on Apple Silicon Macs who do not have access to (or do not wish to
+use) VirtualBox or Parallels. WSL is also supported.
 
 * How to use
 ** Setup
@@ -25,10 +26,15 @@ you for a username and password, those are "root" and "secret" respectively.
 ** Shutting down containers
 If you are done with development for the moment, you can shut down your
 containers with ~docker compose down~.
-* Note
+* Notes
+** Troubleshooting
 If you start with a fresh project, upon viewing your project in the browser, you
 might encounter this error with "connection refused". To fix this, run this
-~php artisan migrate:fresh~.
+~../bin/php artisan migrate:fresh~.
+** A note for WSL users
+Move your project from your local drive to WSL's Linux filesystem! Otherwise,
+you /will/ incur a massive performance penalty! Pages will go from loading
+instantly to taking more than 5 seconds to load!
 * Project configuration
 You will need to modify the .env file in the root of the project in order for
 it to work. The required changes are:
