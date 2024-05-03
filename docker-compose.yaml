@@ -7,14 +7,14 @@ services:
       - "8080:80"
       - "8081:8081"
     volumes:
-      - "${PWD}/${PHP_PROJECT:?}:/var/www/html:ro"
+      - "${PHP_PROJECT:?}:/var/www/html:ro"
       - phpmyadmin:/var/www/phpmyadmin:ro
   php:
     container_name: php
     build:
       context: php/
     volumes:
-      - "${PWD}/${PHP_PROJECT:?}:/var/www/html"
+      - "${PHP_PROJECT:?}:/var/www/html"
   db:
     container_name: mysql
     image: mysql:latest

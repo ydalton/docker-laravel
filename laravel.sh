@@ -1,6 +1,11 @@
 #!/bin/sh
 
-. $PWD/env
+if [ ! -f ./.env ]; then
+	echo "\".env\" file does not exist, did you copy the .env.example file?"
+	exit 1
+fi
+
+. ./.env
 
 usage() {
 	echo "usage: laravel.sh [start|stop|build]"
@@ -33,6 +38,9 @@ case $1 in
 		;;
 esac
 
-docker compose --env-file ./env $EXEC
+docker compose --env-file ./.env $EXEC
 
-echo $PHP_PROJECT/ > ./.gitignore
+# empty the gitignore
+echo -n > ./.gitignore
+echo "/$(basename $PHP_PROJECT)" >> ./.gitignore
+echo "/.env" >> ./.gitignore

@@ -7,10 +7,23 @@ or Parallels. WSL is also supported.
 
 * How to use
 ** Setup
-In the ~env~ file, change the ~PHP_PROJECT~ environment variable to the
-path to your project. For example:
+*** Cloning repo
+First, clone this repo and enter the cloned repo:
 #+begin_example
-PHP_PROJECT=student_administration
+git clone https://github.com/ydalton/docker-laravel.git
+cd docker-laravel
+#+end_example
+*** .env file
+Secondly, you will need to use a ~.env~ file. Copy the ~.env.example~
+as a ~.env~ as follows:
+#+begin_example
+cp .env.example .env
+#+end_example
+Then you can add your changes. Change the ~PHP_PROJECT~ environment
+variable to the path to your project. Both relative and absolute paths
+are supported. For example:
+#+begin_example
+PHP_PROJECT=./student_administration
 #+end_example
 The available commands are:
 - ~./laravel.sh start~: start the Laravel containers.
