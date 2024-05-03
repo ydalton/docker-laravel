@@ -67,5 +67,5 @@ order for it to work. The required changes are:
 - ~DB_USERNAME~ should be "root"
 - ~DB_PASSWORD~ should be "secret"
 - ~DB_HOST~ should be "mysql"
-*Do NOT change anything in ~docker-compose.yml~, you might break*
+*Do NOT change anything in* ~docker-compose.yml~*, you might break*
 *something!*
