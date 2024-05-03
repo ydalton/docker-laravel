@@ -1,8 +1,0 @@
-#!/bin/sh
-
-if [ -z $1 ]; then
-	echo "Did you forget \"artisan\"?"
-	exit 1
-fi
-
-docker exec -u nginx -it php php "/var/www/html/$@"
